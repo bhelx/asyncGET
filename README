@@ -1,0 +1,21 @@
+asyncGET
+
+This program is quite bare, it is meant to be extended. I have only implemented one MODE as of yet. 
+Give it a text file with urls separated by newlines and it will download all of them asynchronously.
+
+BUILDING
+
+You need ant [http://ant.apache.org/] to build. CD to the asyncGET directory then just run the ant command.
+This will create a 'bin' and a 'dist' folder. 
+
+RUNNING
+
+Here is an example command:
+
+
+java -jar dist/asyncGET.jar test/resources/test-urls-small.txt myoutputdirectory 30
+
+
+ 
+
+
