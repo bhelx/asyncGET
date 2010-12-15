@@ -102,8 +102,8 @@ public class AsyncGET {
         } catch (InterruptedException ex) {
             System.out.println(ex);
         } catch (IOException ex) {
-			System.out.println(ex);
-		} catch (URISyntaxException ex) {
+            System.out.println(ex);
+        } catch (URISyntaxException ex) {
             System.out.println(ex);
         }
         
