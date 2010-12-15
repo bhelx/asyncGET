@@ -16,6 +16,7 @@ public final class Report {
 
     public Report() {
         bytes = 0L;
+		resourceCount = 0L;
     }
 
     public long getBytes() {
