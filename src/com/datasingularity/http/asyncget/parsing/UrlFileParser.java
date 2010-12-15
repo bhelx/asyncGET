@@ -3,6 +3,7 @@ package com.datasingularity.http.asyncget.parsing;
 import java.io.EOFException;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.URL;
 
 /**
@@ -16,7 +17,7 @@ import java.net.URL;
  */
 public interface UrlFileParser {
 
-    public URL getNextURL() throws EOFException;
+    public URL getNextURL() throws EOFException, IOException;
     public void setFile(File file) throws FileNotFoundException;
     public void close();
 

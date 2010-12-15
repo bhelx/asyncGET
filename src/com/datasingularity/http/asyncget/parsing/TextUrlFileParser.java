@@ -26,17 +26,13 @@ public class TextUrlFileParser implements UrlFileParser {
     }
 
     @Override
-    public URL getNextURL() throws EOFException {
-        try {
-            String urlString = bufferedReader.readLine();
-            if (urlString == null) {
-                throw new EOFException();
-            }
-            URL url = new URL(urlString);
-            return url;
-        } catch (IOException ex) {
-            return null;
-        }
+    public URL getNextURL() throws EOFException, IOException {
+    	String urlString = bufferedReader.readLine();
+    	if (urlString == null) {
+    		throw new EOFException();
+    	}
+    	URL url = new URL(urlString);
+    	return url;
     }
 
     @Override

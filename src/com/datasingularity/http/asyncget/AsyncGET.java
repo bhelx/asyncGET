@@ -57,25 +57,26 @@ public class AsyncGET {
             URL url;
 
             final long startTime = System.currentTimeMillis();
-
-            //TODO - OMG
+            
+            //TODO - OMG, this is messy
             /* It would be nice if the httpthreadpool could manage
              * the parser and ask for the nextURL when it's threads
              * fall below the MAX_CONNECTION limit. This will work
              * for now.
              */ 
-			do {
-				try {
-					url = parser.getNextURL();
-					if (url != null) {
-						GetHandler getHandler = new GetHandler(url.toURI(),
-								args[1]);
-						pool.sumbitHandler(getHandler);
-					}
-				} catch (EOFException ex) {
-					break;
-				}
-			} while (url != null);
+            while (true) {
+            	try {
+            		url = parser.getNextURL();
+            		if (url != null) {
+            			GetHandler getHandler = new GetHandler(url.toURI(), args[1]);
+            			pool.sumbitHandler(getHandler);
+            		} else {
+            			//this is some kind of invalid url
+            		}
+            	} catch (EOFException ex) {
+            		break;
+            	} 
+            } 
             
             parser.close(); //close the parser
 
