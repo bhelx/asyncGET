@@ -16,9 +16,9 @@ import org.apache.http.HttpResponse;
  */
 public abstract class AsyncRequestHandler {
   
-    protected URI uri;
-    protected String outputDirectory;
-    protected Report report;
+    private URI uri;
+    private String outputDirectory;
+    private Report report;
 	
     public AsyncRequestHandler(URI uri, String outputDirectory) {
         this.outputDirectory = outputDirectory;
