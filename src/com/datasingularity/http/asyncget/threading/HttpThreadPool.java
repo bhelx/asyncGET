@@ -2,7 +2,6 @@ package com.datasingularity.http.asyncget.threading;
 
 import com.datasingularity.http.asyncget.ssl.EasySSLSocketFactory;
 import com.datasingularity.http.asyncget.handlers.AsyncRequestHandler;
-import com.datasingularity.http.asyncget.handlers.GetHandler;
 import java.util.ArrayList;
 import org.apache.http.HttpVersion;
 import org.apache.http.client.HttpClient;

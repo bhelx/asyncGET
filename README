@@ -18,6 +18,10 @@ This will create a 'bin' and a 'dist' folder.
 
 -----RUNNING
 
+Here is the usage statement:
+
+asyncGET <urls_file> <output_directory> <num_simultaneous_connections>
+
 Here is an example command:
 
 java -jar dist/asyncGET.jar test/resources/test-urls-small.txt myoutputdirectory 30
