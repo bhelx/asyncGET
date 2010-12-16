@@ -4,7 +4,6 @@ import com.datasingularity.http.asyncget.handlers.GetHandler;
 import com.datasingularity.http.asyncget.parsing.UrlFileParser;
 import com.datasingularity.http.asyncget.parsing.UrlFileParserFactory;
 import com.datasingularity.http.asyncget.threading.HttpThreadPool;
-import com.datasingularity.http.asyncget.threading.Report;
 
 import java.io.BufferedReader;
 import java.io.EOFException;
@@ -68,6 +67,8 @@ public class AsyncGET {
             	try {
             		url = parser.getNextURL();
             		if (url != null) {
+            			//could use some kind of HandlerFactory here but we only have one 
+            			//handler right now
             			GetHandler getHandler = new GetHandler(url.toURI(), args[1]);
             			pool.sumbitHandler(getHandler);
             		} else {
