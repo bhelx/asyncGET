@@ -27,14 +27,14 @@ public class GetHandler extends AsyncRequestHandler {
     public void finished(HttpResponse response) {
         try {
 
-            URL url = uri.toURL();
+            URL url = this.getURI().toURL();
 
             String[] fileNameSplit = url.getFile().split("/");
             final String contentName = fileNameSplit[fileNameSplit.length-1];
 
             final InputStream is = response.getEntity().getContent();
 
-            File f = new File(outputDirectory + '/' + contentName);
+            File f = new File(this.getOutputDirectory() + '/' + contentName);
             
             OutputStream fout = new FileOutputStream(f);
 
@@ -44,8 +44,8 @@ public class GetHandler extends AsyncRequestHandler {
                 fout.write(buffer, 0, len);
             }
 
-            report.addBytes(response.getEntity().getContentLength());
-            report.addToResourceCount();
+            this.getReport().addBytes(response.getEntity().getContentLength());
+            this.getReport().addToResourceCount();
 
             fout.close();
             is.close();

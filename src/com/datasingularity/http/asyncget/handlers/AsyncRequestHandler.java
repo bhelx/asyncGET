@@ -25,8 +25,16 @@ public abstract class AsyncRequestHandler {
         this.uri = uri;
     }
 
+    public final String getOutputDirectory() {
+    	return outputDirectory;
+    }
+    
     public final void setReport(Report report) {
         this.report = report;
+    }
+    
+    public final Report getReport() {
+        return report;
     }
     
     public final URI getURI() {
