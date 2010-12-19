@@ -1,5 +1,3 @@
-# asyncGET
-
 ## ABOUT
 
 This program is quite bare, it is meant to be extended. I am really just using it as an excuse to 
@@ -19,13 +17,14 @@ This will create a 'bin' and a 'dist' folder.
 ## RUNNING
 
 Here is the usage statement:
->
->	asyncGET <urls_file> <output_directory> <num_simultaneous_connections>
->
+<pre>
+	asyncGET <urls_file> <output_directory> <num_simultaneous_connections>
+</pre>
+
 Here is an example command:
->
->	java -jar dist/asyncGET.jar test/resources/test-urls-small.txt myoutputdirectory 30
->
+<pre>
+	java -jar dist/asyncGET.jar test/resources/test-urls-small.txt myoutputdirectory 30
+</pre>
 
  
 
