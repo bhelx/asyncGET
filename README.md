@@ -11,7 +11,7 @@ More modes are possible by creating different UrlFileParsers and AsyncRequestHan
 
 # BUILDING
 
-You need ant [http://ant.apache.org/] to build. CD to the asyncGET directory then just run the ant command.
+You need [ant](http://ant.apache.org/) to build. CD to the asyncGET directory then just run the ant command.
 This will create a 'bin' and a 'dist' folder. 
 
 # RUNNING
