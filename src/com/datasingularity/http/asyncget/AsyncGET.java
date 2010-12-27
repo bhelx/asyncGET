@@ -63,21 +63,18 @@ public class AsyncGET {
              * fall below the MAX_CONNECTION limit. This will work
              * for now.
              */ 
-            while (true) {
-            	try {
-            		url = parser.getNextURL();
-            		if (url != null) {
-            			//could use some kind of HandlerFactory here but we only have one 
-            			//handler right now
-            			GetHandler getHandler = new GetHandler(url.toURI(), args[1]);
-            			pool.sumbitHandler(getHandler);
-            		} else {
-            			//this is some kind of invalid url
-            		}
-            	} catch (EOFException ex) {
-            		break;
-            	} 
-            } 
+            
+            do {
+            	url = parser.getNextURL();
+        		if (url != null) {
+        			//could use some kind of HandlerFactory here but we only have one 
+        			//handler right now
+        			GetHandler getHandler = new GetHandler(url.toURI(), args[1]);
+        			pool.sumbitHandler(getHandler);
+        		} else {
+        			//this is some kind of invalid url
+        		}
+            } while (url != null);
             
             parser.close(); //close the parser
 

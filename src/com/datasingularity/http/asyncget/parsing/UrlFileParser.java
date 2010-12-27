@@ -17,7 +17,7 @@ import java.net.URL;
  */
 public interface UrlFileParser {
 
-    public URL getNextURL() throws EOFException, IOException;
+    public URL getNextURL() throws IOException;
     public void setFile(File file) throws FileNotFoundException;
     public void close();
 
