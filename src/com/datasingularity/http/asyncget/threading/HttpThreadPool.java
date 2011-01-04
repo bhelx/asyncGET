@@ -51,7 +51,6 @@ public class HttpThreadPool {
         threads = new ArrayList<Thread>();
 
         monitorThread = new IdleConnectionMonitorThread(cm);
-        monitorThread.start();
 
     }
     	
@@ -76,6 +75,15 @@ public class HttpThreadPool {
 
     public void setMaxConnections(int maxConnections) {
         params.setParameter(ConnManagerPNames.MAX_TOTAL_CONNECTIONS, maxConnections);
+    }
+    
+    public void startup() {
+    	monitorThread.start();
+    }
+    
+    public void shutdown() {
+    	this.httpClient.getConnectionManager().shutdown();
+    	monitorThread.shutdown();
     }
   
 

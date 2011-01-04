@@ -54,7 +54,8 @@ public class AsyncGET {
 			HttpThreadPool pool = new HttpThreadPool();
 
 			pool.setMaxConnections(Integer.valueOf(args[2]));
-
+			pool.startup();
+			
 			URL url;
 
 			final long startTime = System.currentTimeMillis();
@@ -85,9 +86,6 @@ public class AsyncGET {
 				thread.join();
 			}
 
-			// shutdown the connection manager
-			pool.getClientConnectionManager().shutdown();
-
 			System.out.println();
 			System.out.println("Downloaded "
 					+ pool.getReport().getResourceCount()
@@ -96,6 +94,9 @@ public class AsyncGET {
 					+ ((System.currentTimeMillis() - startTime) / 1000.0)
 					+ " seconds");
 			System.out.println();
+			
+			// shutdown everything
+			pool.shutdown();
 
 		} catch (FileNotFoundException ex) {
 			System.out.println(ex);
